@@ -1,0 +1,212 @@
+/* General Body and HTML Styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fdfd96, #f5c700, #f39c12);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Gallery Container */
+.Gallery-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #fdfd96, #f5c700, #f39c12);
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Folders Section */
+.folders {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Folder Card */
+.folder-card {
+  background: linear-gradient(45deg, #fdfd96, #f5c700);
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f5c700;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.folder-card:hover {
+  background: linear-gradient(45deg, #f5c700, #f39c12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  animation: fadeInGrid 1.2s ease-out;
+}
+
+/* Image Item */
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 2px solid #f5c700;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure buttons are visible when modal is open */
+.modal-content .download-btn, 
+.modal-content .close-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.download-btn,
+.close-btn {
+  padding: 10px 20px;
+  background: #f5c700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.download-btn:hover,
+.close-btn:hover {
+  background: #f39c12;
+}
+
+.download-btn {
+  display: block !important;
+  visibility: visible !important;
+}
+
+
+.back-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #f5c700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-btn:hover {
+  background: #f39c12;
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f39c12;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
